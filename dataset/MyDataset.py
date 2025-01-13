@@ -55,7 +55,8 @@ class MyDataset(Dataset):
     
 
     
-def get_train_test(train_path, test_path, label_map, label_map_len):
+def get_train_test(train_path, test_path, label_map):
+    label_map_len = len(label_map)
     train = DataLoader(
         dataset=MyDataset(train_path, label_map=label_map, label_map_len=label_map_len),
         batch_size=32, shuffle=True,
